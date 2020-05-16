@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
-import logo from './logo.svg';
 
 /*
 Use React and the data below to display a list of users alongside their favorite movies.
@@ -101,11 +99,11 @@ class App extends Component {
   render() {
     return (
       <div>
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">ReactND - Coding Practice</h1>
-        </header>
-        <h2>Favorite Movies</h2>
+      	<ul>
+      		{profiles.map((data) => (
+				<li key={users[data.userID].id}>{users[data.userID].name}s favorite movie is {movies[data.favoriteMovieID].name}.</li>
+    		))}
+      	</ul>
       </div>
     );
   }
